@@ -1,0 +1,51 @@
+;; launchkey_IO.xtm
+;;
+;; Author: Nathan Brown
+;; Keywords: extempore
+;; Required dylibs: portmidi
+
+;;; Commentary:
+
+;; advanced MIDI control for the Novation Launchkey Mk 1
+;;  (it does lights and stuff!)
+;;
+;; 
+
+(sys:load "libs/external/portmidi.xtm")
+(sys:load "libs/external/midi_input.xtm")
+(sys:load "libs/external/system.xtm")
+
+;;;;;;;
+;;;;;
+;;;;;  Add config file read so that the library is easier to adapt?
+;;;;;
+;;;;;;;
+
+;; All the I/O for the Launchkey
+;;
+(define *lk-keys-out* (pm_create_output_stream (midi_output_port_id "Launchkey 49 MIDI 1")))
+(define *lk-control-out* (pm_create_output_stream (midi_output_port_id "Launchkey 49 MIDI 2")))
+
+(define *lk-keys-in* (pm_create_input_stream (midi_input_port_id "Launchkey 49 MIDI 1")))
+(define *lk-control-in* (pm_create_input_stream (midi_input_port_id "Launchkey 49 MIDI 2")))
+
+
+;; Mode-switching
+;;           ;; probably move these and others to xtlang instead of Scheme,
+;;           ;;   depending on performance
+(define switch-to-incontrol-mode
+  (lambda ()
+    (play-midi-note *lk-control-out* 12 127 1000 0))) ;; Uses a magic number for the Launchkey device
+
+(define switch-to-normal-mode
+  (lambda ()
+    (play-midi-note *lk-control-out* 12 0 1000 0))) ;; Uses another magic number for the Launchkey device
+
+(define *led-red-full* 15)
+(define *led-red-blink* 11)
+(define *led-green-full* 60)
+(define *led-green-blink* 56)
+(define *led-amber-full* 63)
+(define *led-amber-half* 29)
+(define *led-amber-blink* 59)
+(define *led-off* 4)

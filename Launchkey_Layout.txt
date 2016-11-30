@@ -1,0 +1,73 @@
+Launchkey Layout
+
+Mixer
+
+Strips (CC)
+1-41
+2-42
+3-43
+4-44
+5-45
+6-46
+7-47
+8-48
+M-49
+
+Buttons (CC)
+1-51
+2-52
+3-53
+4-54
+5-55
+6-56
+7-57
+8-58
+M-59
+
+Pads (InControl mode) (NOTES)
+T1-96
+T2-97
+T3-98
+T4-99
+T5-100
+T6-101
+T7-102
+T8-103
+TE-104
+B1-112
+B2-113
+B3-114
+B4-115
+B5-116
+B6-117
+B7-118
+B8-119
+BE-120
+
+Knobs (CC)
+1-21
+2-22
+3-23
+4-24
+5-25
+6-26
+7-27
+8-28
+
+Transport Controls (CC)
+REW-112
+FFW-113
+STP-114
+PLA-115
+RPT-116
+REC-117
+
+Track controls (CC)
+L-102
+R-103
+
+In-Control Buttons (NOTES)
+toggles between NOTE_ON and NOTE_OFF with each press
+K-13
+M-14
+P-15

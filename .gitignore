@@ -32,8 +32,10 @@ extempore.pdb
 gud-lldb.el
 # extempore scratch file
 /scratch.xtm
-# igore emacs # files
+# ignore emacs # files
 \#*#
+# ignore spacemacs .# files
+.#*
 # DS_Store
 .DS_Store
 # Sphinx
